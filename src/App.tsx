@@ -1,7 +1,22 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
+import Applayout from "./ui/Applayout";
+import Error from "./ui/Error";
+import Home from "./ui/Home";
+
+const router = createBrowserRouter([
+  {
+    element: <Applayout />,
+    errorElement: <Error />,
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "product/:productId" },
+    ],
+  },
+]);
 
 function App() {
-  return <h1 className="text-red-500 text-[96px]">Test</h1>;
+  return <RouterProvider router={router} />;
 }
 
 export default App;
