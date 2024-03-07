@@ -1,16 +1,9 @@
 import { Link } from "react-router-dom";
-import { headphonesProducts } from "../data";
+import { speakersProducts } from "../data";
 import ShareComponet from "./ShareComponet";
+import { checkEvenOrOdd } from "../utils/util";
 
-const checkEvenOrOdd = (number: number) => {
-  if (number % 2 === 0) {
-    return true;
-  } else {
-    return false;
-  }
-};
-
-const Headphone = () => {
+const Speaker = () => {
   return (
     <div className="w-full bg-white relative">
       <div className="flex items-center justify-center">
@@ -18,14 +11,14 @@ const Headphone = () => {
           <div className="bg-dark w-full flex justify-center items-center mb-16 md:py-32 py-24 ">
             <div className="lg:max-w-[1220px] w-full text-center">
               <h2 className="text-white uppercase text-2xl lg:text-5xl font-bold">
-                Headphones
+                Speakers
               </h2>
             </div>
           </div>
           <div className="w-full bg-white md:py-16 py-14 flex justify-center items-center lg:px-32 px-6">
             <div className="lg:max-w-[1220px] w-full">
               <div className="flex flex-col justify-center items-center gap-y-32">
-                {headphonesProducts.map((product, index) => (
+                {speakersProducts.map((product, index) => (
                   <div
                     key={product.id}
                     className="flex lg:flex-row flex-col lg:justify-between w-full gap-16 lg:gap-[200px]"
@@ -52,7 +45,7 @@ const Headphone = () => {
                           : "lg:order-1"
                       } w-full lg:flex lg:justify-center lg:items-center`}
                     >
-                      <div className="flex flex-col justify-center items-center gap-y-8 lg:items-start text-center lg:text-left">
+                      <div className="flex flex-col justify-center items-center gap-y-8  lg:items-start text-center lg:text-left">
                         <h2 className="font-bold text-slate-950 md:text-5xl text-4xl tracking-wider">
                           {product.name}
                         </h2>
@@ -79,4 +72,4 @@ const Headphone = () => {
   );
 };
 
-export default Headphone;
+export default Speaker;

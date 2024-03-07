@@ -1,13 +1,8 @@
+import { Link } from "react-router-dom";
 import { earphonesProducts } from "../data";
 import ShareComponet from "./ShareComponet";
+import { checkEvenOrOdd } from "../utils/util";
 
-const checkEvenOrOdd = (number: number) => {
-  if (number % 2 === 0) {
-    return true;
-  } else {
-    return false;
-  }
-};
 const Earphones = () => {
   return (
     <div className="w-full bg-white relative">
@@ -57,9 +52,12 @@ const Earphones = () => {
                         <p className="text-gray-500 lg:text-left text-center">
                           {product.description}
                         </p>
-                        <button className="bg-orange-400 hover:bg-dark ring-primary hover:ring-1  ease-in-out duration-300 transition-all text-white font-semibold px-6 py-3 text-medium">
+                        <Link
+                          to={`/product/${product.slug}`}
+                          className="bg-orange-400 hover:bg-dark ring-primary hover:ring-1  ease-in-out duration-300 transition-all text-white font-semibold px-6 py-3 text-medium"
+                        >
                           SEE PRODUCT
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
