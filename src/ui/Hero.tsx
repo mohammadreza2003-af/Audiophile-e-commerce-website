@@ -8,7 +8,7 @@ const Hero = () => {
               <h2 className="text-[#b1b1b1] font-normal tracking-[6px] uppercase mb-6">
                 New product
               </h2>
-              <h1 className="font-bold text-white md:text-7xl text-6xl tracking-wider mb-12">
+              <h1 className="font-bold text-white md:text-7xl text-5xl tracking-wider mb-12">
                 XX99 Mark II
                 <br />
                 Headphones

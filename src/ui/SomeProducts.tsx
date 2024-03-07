@@ -1,10 +1,4 @@
-import data from "../../public/data.json";
-
 const SomeProducts = () => {
-  const speaker1 = data[5];
-  const speaker2 = data[4];
-  const earphone1 = data[0];
-  console.log(`bg-[url('${speaker2.image.desktop}')]`);
   return (
     <div className="w-full bg-white relative">
       <div className="flex items-center justify-center lg:px-32 px-6">
