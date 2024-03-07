@@ -23,7 +23,7 @@ const Navbar = () => {
                 toggleNav ? "block" : "hidden"
               } w-full shadow-lg rounded-b-lg overflow-hidden z-20`}
             >
-              <Products />
+              <Products share={false} />
             </div>
             <div className="flex gap-x-32">
               <div className="flex justify-center items-center">
@@ -45,14 +45,17 @@ const Navbar = () => {
                   width={32}
                   onClick={() => setToggleNav((pre) => !pre)}
                 />
-                <a href="#">
+                <Link to="/">
                   <img src={Logo} width={143} height={25} />
-                </a>
+                </Link>
               </div>
-              <ul className="text-white md:flex gap-x-8 hidden ">
+              <ul className="text-white md:flex gap-x-8 hidden uppercase font-bold">
                 {navLinks.map((link) => (
                   <li key={link.text}>
-                    <Link className="font-[500]" to={`/${link.path}`}>
+                    <Link
+                      className="transition-all ease-in-out duration-300 hover:underline hover:text-primary "
+                      to={`/${link.path}`}
+                    >
                       {link.text}
                     </Link>
                   </li>

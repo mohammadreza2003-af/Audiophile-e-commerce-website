@@ -16,3 +16,15 @@ export type socialLinks = {
   alt: string;
   href: string;
 };
+
+export type ProductItem = {
+  id: number;
+  description: string;
+  slug: string;
+  name: string;
+  image: {
+    mobile: string;
+    tablet: string;
+    desktop: string;
+  };
+};

@@ -16,7 +16,12 @@ const Footer = () => {
             <ul className="text-white flex lg:flex-row flex-col gap-x-8 justify-center items-center uppercase font-bold gap-y-4">
               {navLinks.map((link) => (
                 <li key={link.text}>
-                  <Link to={`/${link.path}`}>{link.text}</Link>
+                  <Link
+                    className="transition-all ease-in-out duration-300 hover:underline hover:text-primary"
+                    to={`/${link.path}`}
+                  >
+                    {link.text}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -41,7 +46,7 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
-            <div className="w-full lg:order-3">
+            <div className="w-full lg:order-3 order-2">
               <p className="text-slate-400 mb-8 text-center lg:text-left text-[16px] font-[500]">
                 Copyright 2023. All Rights Reserved
               </p>

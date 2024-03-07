@@ -2,11 +2,19 @@ import { Link } from "react-router-dom";
 import { products } from "../data/index";
 import { Icon } from "@iconify/react/dist/iconify.js";
 
-const Products = () => {
+const Products = ({ share }: { share: boolean }) => {
   return (
     <div className="w-full bg-white relative">
-      <div className="flex items-center justify-center lg:px-32 px-6">
-        <div className="lg:max-w-[1220px] w-full md:py-48 py-24 bg-white">
+      <div
+        className={`flex items-center justify-center ${
+          share ? "" : "lg:px-32 px-6"
+        }`}
+      >
+        <div
+          className={`lg:max-w-[1220px] w-full ${
+            share ? "py-16" : "md:py-48 py-24"
+          } bg-white`}
+        >
           <ul className="flex flex-col w-full md:flex-row md:gap-x-8">
             {products.map((pro) => (
               <li
@@ -20,7 +28,7 @@ const Products = () => {
                   </h2>
                   <Link
                     to={pro.to}
-                    className="text-[16px] font-semibold uppercase text-gray-500 flex justify-center items-center"
+                    className="text-[16px] font-semibold uppercase text-gray-500 flex justify-center items-center ease-in-out duration-300 transition-all hover:text-primary hover:scale-[110%]"
                   >
                     Shop
                     <Icon

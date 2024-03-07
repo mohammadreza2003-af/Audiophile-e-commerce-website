@@ -18,7 +18,7 @@ const Hero = () => {
                 <br className="hidden md:block" />
                 made for the passionate music enthusiast.
               </p>
-              <button className="bg-orange-400 text-white font-semibold px-6 py-3 text-medium">
+              <button className="bg-orange-400 hover:bg-dark ring-primary hover:ring-1  ease-in-out duration-300 transition-all text-white font-semibold px-6 py-3 text-medium">
                 SEE PRODUCT
               </button>
             </div>

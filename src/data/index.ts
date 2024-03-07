@@ -1,9 +1,52 @@
-import { TypeProducts, navLinks, socialLinks } from "./type";
+import { ProductItem, TypeProducts, navLinks, socialLinks } from "./type";
+import data from "../../public/data.json";
+
+const headphonesProductsFilter = data.filter(
+  (item) => item.category === "headphones"
+);
+
+const headphonesProducts: ProductItem[] = headphonesProductsFilter.map(
+  (item) => {
+    return {
+      id: item.id,
+      name: item.name,
+      description: item.description,
+      slug: item.slug,
+      image: item.image,
+    };
+  }
+);
+const speakersProductsFilter = data.filter(
+  (item) => item.category === "speakers"
+);
+
+const speakersProducts: ProductItem[] = speakersProductsFilter.map((item) => {
+  return {
+    id: item.id,
+    name: item.name,
+    description: item.description,
+    slug: item.slug,
+    image: item.image,
+  };
+});
+const earphonesProductsFilter = data.filter(
+  (item) => item.category === "earphones"
+);
+
+const earphonesProducts: ProductItem[] = earphonesProductsFilter.map((item) => {
+  return {
+    id: item.id,
+    name: item.name,
+    description: item.description,
+    slug: item.slug,
+    image: item.image,
+  };
+});
 
 const navLinks: navLinks[] = [
   {
     text: "Home",
-    path: "/",
+    path: "",
   },
   {
     text: "Headphones",
@@ -62,4 +105,11 @@ const socialLinks: socialLinks[] = [
   },
 ];
 
-export { navLinks, products, socialLinks };
+export {
+  navLinks,
+  products,
+  socialLinks,
+  headphonesProducts,
+  speakersProducts,
+  earphonesProducts,
+};

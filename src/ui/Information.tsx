@@ -1,8 +1,16 @@
-const Information = () => {
+const Information = ({ share }: { share: boolean }) => {
   return (
     <div className="w-full bg-white relative">
-      <div className="flex items-center justify-center lg:px-32 px-6">
-        <div className="lg:max-w-[1220px] w-full lg:py-44 py-32 bg-white">
+      <div
+        className={`flex items-center justify-center ${
+          share ? "" : "lg:px-32 px-6"
+        }`}
+      >
+        <div
+          className={`lg:max-w-[1220px] w-full ${
+            share ? "py-16" : "lg:py-44 py-32"
+          } bg-white`}
+        >
           <div className="flex flex-col justify-center items-center gap-y-8 lg:flex-row lg:justify-between">
             <div className="max-w-[80%] rounded-lg overflow-hidden lg:order-2">
               <img
