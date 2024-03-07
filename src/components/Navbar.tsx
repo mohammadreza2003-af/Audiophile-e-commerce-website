@@ -7,8 +7,6 @@ import Products from "./Products";
 const Navbar = () => {
   const [toggleNav, setToggleNav] = useState(false);
 
-  console.log(toggleNav);
-
   return (
     <div className="w-full font-Manrope">
       <div className="flex items-center justify-center lg:px-32 px-6 bg-dark">
@@ -16,9 +14,7 @@ const Navbar = () => {
           <nav className="w-full flex justify-between items-center relative">
             <div
               className={`absolute top-[64px] ${
-                toggleNav
-                  ? "animation-top-to-bottom"
-                  : "animation-bottom-to-top"
+                toggleNav ? "animation-top-to-bottom" : "translate-y-[100%]"
               } sm:hidden ${
                 toggleNav ? "block" : "hidden"
               } w-full shadow-lg rounded-b-lg overflow-hidden z-20`}

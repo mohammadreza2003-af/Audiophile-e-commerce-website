@@ -1,11 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
-import Applayout from "./ui/Applayout";
-import Error from "./ui/Error";
-import Home from "./ui/Home";
-import Headphone from "./ui/Headphone";
-import Speaker from "./ui/Speaker";
-import Earphones from "./ui/Earphones";
+import Applayout from "./components/Applayout";
+import Error from "./components/Error";
+import Home from "./components/Home";
+import Headphone from "./components/Headphone";
+import Speaker from "./components/Speaker";
+import Earphones from "./components/Earphones";
 
 const router = createBrowserRouter([
   {
