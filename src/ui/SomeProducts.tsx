@@ -1,4 +1,10 @@
+import data from "../../public/data.json";
+
 const SomeProducts = () => {
+  const speaker1 = data[5];
+  const speaker2 = data[4];
+  const earphone1 = data[0];
+  console.log(`bg-[url('${speaker2.image.desktop}')]`);
   return (
     <div className="w-full bg-white relative">
       <div className="flex items-center justify-center lg:px-32 px-6">
@@ -8,11 +14,11 @@ const SomeProducts = () => {
               className={`bg-primary w-full relative rounded-lg py-16 z-10 flex md:flex-row px-10 flex-col justify-center items-center text-center gap-y-8 md:gap-x-8 overflow-hidden`}
             >
               <img
-                src="/public/assets/home/desktop/pattern-circles.svg"
+                src="/assets/home/desktop/pattern-circles.svg"
                 className="absolute md:top-8 top-14 left-[50%] md:left-[30%] translate-x-[-50%] -z-10 w-[400px] md:w-[1200px]"
               />
               <img
-                src="/public/assets/home/desktop/image-speaker-zx9.png"
+                src="/assets/home/desktop/image-speaker-zx9.png"
                 alt="speacker"
                 className="md:translate-y-[20%] w-[220px] md:w-[300px]"
               />
@@ -48,7 +54,7 @@ const SomeProducts = () => {
             </div>
             <div className="grid grid-rows-1 sm:grid-cols-2 w-full gap-8">
               <div className="bg-[url('/public/assets/home/mobile/image-earphones-yx1.jpg')] sm:bg-[url('/public/assets/home/tablet/image-earphones-yx1.jpg')] md:bg-[url('/public/assets/home/desktop/image-earphones-yx1.jpg')] bg-no-repeat bg-center bg-cover sm:h-[320px] h-[200px] w-[100%] relative rounded-lg"></div>
-              <div className="flex px-10 flex-col justify-center items-start text-center gap-y-8 md:gap-x-8 bg-[#f4f4f4] rounded-lg">
+              <div className="flex px-10 flex-col justify-center items-start text-center gap-y-8 md:gap-x-8 bg-[#f4f4f4] rounded-lg py-8">
                 <h2 className="font-bold text-slate-950 md:text-4xl text-3xl tracking-wider">
                   YX1 Earphones
                 </h2>

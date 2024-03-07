@@ -1,4 +1,5 @@
 import Hero from "./Hero";
+import Information from "./Information";
 import Products from "./Products";
 import SomeProducts from "./SomeProducts";
 
@@ -8,6 +9,7 @@ const Home = () => {
       <Hero />
       <Products />
       <SomeProducts />
+      <Information />
     </div>
   );
 };

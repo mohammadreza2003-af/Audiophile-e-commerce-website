@@ -9,3 +9,10 @@ export type TypeProducts = {
   to: string;
   src: string;
 };
+
+export type socialLinks = {
+  id: number;
+  src: string;
+  alt: string;
+  href: string;
+};

@@ -2,3 +2,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.animation-top-to-bottom {
+  animation: top-to-bottom 0.5s ease-in-out;
+}
+.animation-bottom-to-top {
+  animation: bottom-to-top 0.5s ease-in;
+}
+@keyframes top-to-bottom {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes bottom-to-top {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}

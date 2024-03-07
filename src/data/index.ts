@@ -1,4 +1,4 @@
-import { TypeProducts, navLinks } from "./type";
+import { TypeProducts, navLinks, socialLinks } from "./type";
 
 const navLinks: navLinks[] = [
   {
@@ -41,4 +41,25 @@ const products: TypeProducts[] = [
   },
 ];
 
-export { navLinks, products };
+const socialLinks: socialLinks[] = [
+  {
+    id: 1,
+    src: "/assets/shared/desktop/icon-facebook.svg",
+    alt: "facebook",
+    href: "#",
+  },
+  {
+    id: 2,
+    src: "/assets/shared/desktop/icon-instagram.svg",
+    alt: "instagram",
+    href: "#",
+  },
+  {
+    id: 3,
+    src: "/assets/shared/desktop/icon-twitter.svg",
+    alt: "twitter",
+    href: "#",
+  },
+];
+
+export { navLinks, products, socialLinks };
