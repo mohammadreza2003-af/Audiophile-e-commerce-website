@@ -78,8 +78,8 @@ const products: TypeProducts[] = [
 
   {
     id: 3,
-    name: "Headphones",
-    to: "/headphones",
+    name: "Earphones",
+    to: "/earphones",
     src: "/assets/shared/desktop/image-earphones.png",
   },
 ];

@@ -62,7 +62,9 @@ const Product = () => {
                 >
                   <div className="flex flex-col justify-center items-start gap-y-4 text-left">
                     {product.new && (
-                      <h2 className="font-[300] text-primary ">new product</h2>
+                      <h2 className="font-[300] text-primary uppercase">
+                        new product
+                      </h2>
                     )}
                     <h2 className="font-bold text-slate-950 md:text-5xl text-4xl tracking-wider">
                       {product.name}
