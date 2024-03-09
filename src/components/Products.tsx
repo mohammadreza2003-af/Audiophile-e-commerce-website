@@ -27,6 +27,7 @@ const Products = ({ share }: { share: boolean }) => {
                     {pro.name}
                   </h2>
                   <Link
+                    onClick={() => window.scroll(0, 0)}
                     to={pro.to}
                     className="text-[16px] font-semibold uppercase text-gray-500 flex justify-center items-center ease-in-out duration-300 transition-all hover:text-primary hover:scale-[110%]"
                   >

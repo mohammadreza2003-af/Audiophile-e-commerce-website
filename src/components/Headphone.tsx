@@ -53,6 +53,7 @@ const Headphone = () => {
                           {product.description}
                         </p>
                         <Link
+                          onClick={() => window.scroll(0, 0)}
                           to={`/product/${product.slug}`}
                           className="bg-orange-400 hover:bg-dark ring-primary hover:ring-1  ease-in-out duration-300 transition-all text-white font-semibold px-6 py-3 text-medium"
                         >

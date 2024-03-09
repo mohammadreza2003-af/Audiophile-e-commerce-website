@@ -33,6 +33,7 @@ const SomeProducts = () => {
                   deliver truly remarkable sound.
                 </p>
                 <Link
+                  onClick={() => window.scroll(0, 0)}
                   to={`/product/${speaker1.slug}`}
                   className="bg-black ease-in-out duration-300 transition-all hover:bg-gray-800 text-white font-semibold px-6 py-3 text-medium"
                 >
@@ -52,6 +53,7 @@ const SomeProducts = () => {
                 ZX7 Speaker
               </h2>
               <Link
+                onClick={() => window.scroll(0, 0)}
                 to={`/product/${speaker2.slug}`}
                 className="border-2 ease-in-out duration-300 transition-all hover:bg-slate-950 hover:text-white border-slate-950  text-slate-950 font-semibold px-6 py-3 text-medium"
               >
@@ -65,6 +67,7 @@ const SomeProducts = () => {
                   YX1 Earphones
                 </h2>
                 <Link
+                  onClick={() => window.scroll(0, 0)}
                   to={`/product/${earphone1.slug}`}
                   className="border-2 ease-in-out duration-300 transition-all hover:bg-slate-950 hover:text-white border-slate-950  text-slate-950 font-semibold px-6 py-3 text-medium"
                 >

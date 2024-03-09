@@ -41,7 +41,7 @@ const Navbar = () => {
                   width={32}
                   onClick={() => setToggleNav((pre) => !pre)}
                 />
-                <Link to="/">
+                <Link to="/" onClick={() => window.scroll(0, 0)}>
                   <img src={Logo} width={143} height={25} />
                 </Link>
               </div>
@@ -49,6 +49,7 @@ const Navbar = () => {
                 {navLinks.map((link) => (
                   <li key={link.text}>
                     <Link
+                      onClick={() => window.scroll(0, 0)}
                       className="transition-all ease-in-out duration-300 hover:underline hover:text-primary "
                       to={`/${link.path}`}
                     >

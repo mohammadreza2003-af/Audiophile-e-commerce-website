@@ -28,3 +28,49 @@ export type ProductItem = {
     desktop: string;
   };
 };
+
+export type FullInfoProduct = {
+  id: number;
+  description: string;
+  slug: string;
+  name: string;
+  image: {
+    mobile: string;
+    tablet: string;
+    desktop: string;
+  };
+  category: string;
+  new: boolean;
+  price: number;
+  features: string;
+  includes: {
+    quantity: number;
+    item: string;
+  }[];
+  gallery: {
+    first: {
+      mobile: string;
+      tablet: string;
+      desktop: string;
+    };
+    second: {
+      mobile: string;
+      tablet: string;
+      desktop: string;
+    };
+    third: {
+      mobile: string;
+      tablet: string;
+      desktop: string;
+    };
+  };
+  others: {
+    slug: string;
+    name: string;
+    image: {
+      mobile: string;
+      tablet: string;
+      desktop: string;
+    };
+  }[];
+};

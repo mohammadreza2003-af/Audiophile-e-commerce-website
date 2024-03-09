@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import Headphone from "./components/Headphone";
 import Speaker from "./components/Speaker";
 import Earphones from "./components/Earphones";
+import Product from "./components/Product";
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,7 @@ const router = createBrowserRouter([
       { path: "/headphones", element: <Headphone /> },
       { path: "/speakers", element: <Speaker /> },
       { path: "/earphones", element: <Earphones /> },
-      { path: "product/:productId" },
+      { path: "product/:productId", element: <Product /> },
     ],
   },
 ]);

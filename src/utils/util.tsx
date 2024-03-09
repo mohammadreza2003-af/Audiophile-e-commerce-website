@@ -6,4 +6,8 @@ const checkEvenOrOdd = (number: number) => {
   }
 };
 
-export { checkEvenOrOdd };
+const formatNumberWithCommas = (price: number) => {
+  return price.toLocaleString();
+};
+
+export { checkEvenOrOdd, formatNumberWithCommas };
