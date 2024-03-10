@@ -8,7 +8,7 @@ const Information = ({ share }: { share: boolean }) => {
       >
         <div
           className={`lg:max-w-[1220px] w-full ${
-            share ? "py-16" : "lg:py-44 py-32"
+            share ? "py-16" : "lg:py-44 py-32 "
           } bg-white`}
         >
           <div className="flex flex-col justify-center items-center gap-y-8 lg:flex-row lg:justify-between">
