@@ -2,15 +2,18 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { checkEvenOrOdd, formatNumberWithCommas } from "../utils/util";
 import data from "../../public/data.json";
 import { useEffect, useState } from "react";
-import { FullInfoProduct } from "../data/type";
+import { FullInfoProduct, cartProduct } from "../data/type";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import ShareComponet from "./ShareComponet";
+import { useDispatch } from "react-redux";
+import { AddItem } from "../contexts/redux";
 
 const Product = () => {
   const { productId } = useParams();
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const [productData, setProductData] = useState<FullInfoProduct[]>([]);
+  const [amount, setAmount] = useState<number>(1);
 
   useEffect(() => {
     const tempData: FullInfoProduct[] = data.filter(
@@ -18,6 +21,20 @@ const Product = () => {
     );
     setProductData(tempData);
   }, [productId]);
+
+  const setAmountProduct = (type: string) => {
+    if (type === "increase") {
+      setAmount((pre) => (pre += 1));
+    }
+    if (type === "decrease" && amount > 1) {
+      setAmount((pre) => (pre -= 1));
+    }
+  };
+
+  const addItem = (infoProduct: cartProduct) => {
+    dispatch(AddItem(infoProduct));
+    setAmount(1);
+  };
 
   return (
     <div className="w-full bg-white relative">
@@ -30,11 +47,8 @@ const Product = () => {
             Go Back
           </button>
           {productData.map((product, index) => (
-            <>
-              <div
-                key={product.id}
-                className="flex lg:flex-row flex-col lg:justify-between gap-16 lg:gap-[200px] lg:w-full md:w-[700px] w-[100%] mx-auto lg:mb-24 mb-14"
-              >
+            <div key={product.id}>
+              <div className="flex lg:flex-row flex-col lg:justify-between gap-16 lg:gap-[200px] lg:w-full md:w-[700px] w-[100%] mx-auto lg:mb-24 mb-14">
                 <div
                   className={`${
                     checkEvenOrOdd(index + 1) === false
@@ -77,15 +91,15 @@ const Product = () => {
                     </span>
                     <div className="flex gap-x-8 justify-center items-center">
                       <div className="flex bg-slate-100 justify-between items-center gap-8 px-4 py-3">
-                        <button>
+                        <button onClick={() => setAmountProduct("decrease")}>
                           <Icon
                             icon="ic:outline-minus"
                             width={18}
                             className="text-primary"
                           />
                         </button>
-                        <p>1</p>
-                        <button>
+                        <p>{amount}</p>
+                        <button onClick={() => setAmountProduct("increase")}>
                           <Icon
                             icon="ic:outline-plus"
                             width={18}
@@ -93,7 +107,21 @@ const Product = () => {
                           />
                         </button>
                       </div>
-                      <button className="bg-orange-400 uppercase hover:bg-dark ring-primary hover:ring-1  ease-in-out duration-300 transition-all text-white font-semibold px-6 py-3 text-medium">
+                      <button
+                        onClick={() =>
+                          addItem({
+                            id: product.id,
+                            slug: product.slug,
+                            name: product.name,
+                            quantity: amount,
+                            image: product.image,
+                            category: product.category,
+                            new: product.new,
+                            price: product.price,
+                          })
+                        }
+                        className="bg-orange-400 uppercase hover:bg-dark ring-primary hover:ring-1  ease-in-out duration-300 transition-all text-white font-semibold px-6 py-3 text-medium"
+                      >
                         Add To Card
                       </button>
                     </div>
@@ -114,8 +142,11 @@ const Product = () => {
                     In the box
                   </h2>
                   <ul className="flex flex-col gap-y-2">
-                    {product.includes.map((item) => (
-                      <li className="flex items-center gap-3 justify-start">
+                    {product.includes.map((item, index) => (
+                      <li
+                        key={index}
+                        className="flex items-center gap-3 justify-start"
+                      >
                         <span className="font-[600] text-lg text-primary ">
                           {item.quantity}x
                         </span>
@@ -211,7 +242,7 @@ const Product = () => {
                   ))}
                 </ul>
               </div>
-            </>
+            </div>
           ))}
           <ShareComponet />
         </div>

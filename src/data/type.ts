@@ -74,3 +74,21 @@ export type FullInfoProduct = {
     };
   }[];
 };
+export type cartProduct = {
+  id: number;
+  slug: string;
+  name: string;
+  quantity: number;
+  image: {
+    mobile: string;
+    tablet: string;
+    desktop: string;
+  };
+  category: string;
+  new: boolean;
+  price: number;
+};
+
+export type initState = {
+  cart: cartProduct[];
+};
