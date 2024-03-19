@@ -92,3 +92,8 @@ export type cartProduct = {
 export type initState = {
   cart: cartProduct[];
 };
+export type stats = {
+  cart: {
+    cart: cartProduct[];
+  };
+};

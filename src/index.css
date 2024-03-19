@@ -3,11 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 
+.trans {
+  @apply transition-all ease-in-out duration-300
+}
 .animation-top-to-bottom {
-  animation: top-to-bottom 0.5s ease-in-out;
+  transform: translateY(0);
+    animation: top-to-bottom 0.5s ease-in;
 }
 .animation-bottom-to-top {
   animation: bottom-to-top 0.5s ease-in;
+    transform: translateY(-200%);
 }
 @keyframes top-to-bottom {
   0% {
